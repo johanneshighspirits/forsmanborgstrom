@@ -14,7 +14,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
     get projects_home_url
     assert_response :success
-    assert_select "title", "Home | #{@company_name}"
+    assert_select "title", "#{@company_name}"
   end
 
   test "should get about" do
