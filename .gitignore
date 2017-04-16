@@ -43,3 +43,6 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore original img files and such, placed in cloak dir:
+cloak/
