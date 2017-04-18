@@ -6,3 +6,4 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal full_title, base_title
     assert_equal full_title("Contact"), "Contact | #{base_title}"
   end
+end
