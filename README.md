@@ -33,6 +33,6 @@ $ rails server
 Deploy to heroku
 
 ```
-git push heroku master
+$ git push heroku master
 ```
 
