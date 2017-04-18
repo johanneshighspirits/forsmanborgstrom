@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Test Johannes Borgström
+  email: test_johannes@highspirits.se
+
+two:
+  name: Test Sofie Forsman
+  email: test_sofie@highspirits.se
