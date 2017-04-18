@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
   # Only save downcased email addresses
   before_save { email.downcase! }
   # Validations
@@ -11,11 +12,35 @@ class User < ApplicationRecord
   
   has_secure_password
 
-  # Return the hash digest of a given string
+  # Returns the hash digest of a given string
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
   
+  # Returns a random token
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # Remember user
+  def remember
+    # Generate random token
+    self.remember_token = User.new_token
+    # Store the digested/hashed token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  # Returns true if the given token matches the digest
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  # Forget user
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
 end
