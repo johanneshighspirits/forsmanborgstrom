@@ -3,7 +3,9 @@
 one:
   name: Test Johannes Borgström
   email: test_johannes@highspirits.se
+  password_digest: <%= User.digest('password') %>
 
 two:
   name: Test Sofie Forsman
   email: test_sofie@highspirits.se
+  password_digest: <%= User.digest('password') %>
