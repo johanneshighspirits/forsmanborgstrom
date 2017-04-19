@@ -10,4 +10,8 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     get about_path
     assert_select "title", full_title("About")
   end
+
+  # TODO Test all layout links, logged in and logged out
+
+
 end

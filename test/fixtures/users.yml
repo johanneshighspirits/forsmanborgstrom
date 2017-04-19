@@ -4,8 +4,16 @@ one:
   name: Test Johannes Borgström
   email: test_johannes@highspirits.se
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 two:
   name: Test Sofie Forsman
   email: test_sofie@highspirits.se
   password_digest: <%= User.digest('password') %>
+
+<% 33.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
