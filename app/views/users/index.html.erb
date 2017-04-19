@@ -1,0 +1,10 @@
+<%= provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+<ul class="users">
+  <% # Calling render on @users will render every single user object, using the app/views/users/_user.html.erb partial %>
+  <%= render @users %>
+</ul>
+<%= will_paginate %>
+
