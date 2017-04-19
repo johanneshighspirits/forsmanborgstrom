@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'application#index'
 
+  get     '/projects/:project_name', to: 'application#open'
+
   # Projects
   get     '/home',    to: 'projects#home'
   get     '/about',   to: 'projects#about'

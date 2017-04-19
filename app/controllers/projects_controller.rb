@@ -7,4 +7,5 @@ class ProjectsController < ApplicationController
 
   def help
   end
+
 end

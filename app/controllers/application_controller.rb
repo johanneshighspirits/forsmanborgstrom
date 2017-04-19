@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
+  end
+
+  def open
+    @project_name = params[:project_name].capitalize
     render 'index'
   end
   
